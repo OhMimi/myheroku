@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 
@@ -10,13 +9,14 @@ import (
 
 func main() {
 
-	port := 8787
+	// port := 8787
 
 	router := gin.Default()
 
 	router.GET("/ping", PingPongHandler)
 
-	routerErr := router.Run(fmt.Sprintf(":%d", port))
+	// routerErr := router.Run(fmt.Sprintf(":%d", port))
+	routerErr := router.Run()
 	if routerErr != nil {
 		log.Fatal(routerErr)
 	}
